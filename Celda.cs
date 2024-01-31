@@ -8,13 +8,12 @@ namespace DAW.PRO._2._4.Buscaminas
 {
     internal class Celda
     {
-        bool hayMina;
+        public bool hayMina;
         int minasAlrededor;
 
         public Celda()
         {
             hayMina = false;
-
         }
 
         public void colocaMina()
@@ -22,17 +21,21 @@ namespace DAW.PRO._2._4.Buscaminas
             hayMina = true;
         }
 
-        public void dibuja()
+        public void dibujaCelda()
         {
             if (hayMina)
             {
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("*");
+                Console.Write(" * ");
                 Console.ForegroundColor = ConsoleColor.White;
             }
             else {
-                Console.WriteLine(minasAlrededor);
+                Console.Write(" "+minasAlrededor+" ");
             }
+        }
+
+        public void rodeanMinas() { 
+            minasAlrededor ++;
         }
 
     }
